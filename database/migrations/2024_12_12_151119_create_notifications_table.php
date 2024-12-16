@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->unique();
             $table->foreignIdFor(User::class);
             $table->string('content');
             $table->dateTime('read_at')->nullable();
